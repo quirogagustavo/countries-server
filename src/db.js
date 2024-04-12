@@ -48,7 +48,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
 //`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`
 
-const sequelize = new Sequelize('postgres://countries_postgresql_user:suVSpLENieTrowJcE9mJVK4ExjgyPCSQ@dpg-coc665gl5elc739o0r6g-a.oregon-postgres.render.com/countries_postgresql',
+const sequelize = new Sequelize('postgres://countries_postgresql_user:suVSpLENieTrowJcE9mJVK4ExjgyPCSQ@dpg-coc665gl5elc739o0r6g-a/countries_postgresql',
 {dialectOptions: {
     ssl: {
       require: true, // Enforces SSL connection
