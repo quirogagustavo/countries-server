@@ -8,6 +8,10 @@
     "api": "echo 'Local API listening on PORT 5000' & json-server --watch api/db.json -p 5000 -q",
     "start": "concurrently \"npm run server\" \"npm run api\""
   },
+  "engines": {
+    "node": "20.12.2",
+    "npm": "10.5.0"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -24,5 +28,8 @@
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.31.1"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.4"
   }
 }
