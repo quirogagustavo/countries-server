@@ -46,17 +46,17 @@ const fs = require('fs');
 const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
-//`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`
-
-const sequelize = new Sequelize('postgres://countries_postgresql_user:suVSpLENieTrowJcE9mJVK4ExjgyPCSQ@dpg-coc665gl5elc739o0r6g-a/countries_postgresql'
+//
+//'postgres://countries_postgresql_user:suVSpLENieTrowJcE9mJVK4ExjgyPCSQ@dpg-coc665gl5elc739o0r6g-a/countries_postgresql'
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
 /* {dialectOptions: {
     ssl: {
       require: true, // Enforces SSL connection
       
-    }, 
-  logging: false, // set to console.log to see the raw SQL queries
+    }, */
+  { logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-}} */);
+} );
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
