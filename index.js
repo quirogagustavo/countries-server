@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001;
 const HOST = ('RENDER' in process.env) ? '0.0.0.0' : 'localhost';
 // console.log('Estoy en el in
 
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
 server.listen(PORT, HOST, () => {
   LoadDb();
   console.log(`Server listening on port ${PORT}`);

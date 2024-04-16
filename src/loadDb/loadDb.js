@@ -56,11 +56,15 @@ async function LoadDb(){
         // console.log(country.cca3,'*/*',country.name.official,'/*/',country.flags.png,'*/*',country.continents[0]);
         // console.log(('capital' in country)?country.capital[0]:'')
         // console.log('*/*',country.subregion,'*/*',country.area,'*/*',country.population);
-         await Countries.create({ id: country.cca3, name: country.name.official,
+         await Countries.findOrCreate({ 
+          where: {
+            id: country.cca3
+          }, 
+          defaults: {name: country.name.official,
          flag: (country.flags.png)?country.flags.png:'', continente:country.continents[0],
          //Todos los objetos no tienen capital. Valido que tengan la propiedad capital, sino la tienen la dejo en blanco
          capital: ('capital' in country)?country.capital[0]:'', subregion: country.subregion, area:country.area, poblacion: country.population
-     })
+     },})
 
 
     
